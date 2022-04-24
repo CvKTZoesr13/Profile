@@ -1,0 +1,213 @@
+--tao database ten MarkManagement
+
+create database MarkManagement 
+go
+
+use MarkManagement
+create table Students (
+      StudentID nvarchar(12),
+	  StudentName nvarchar(25) not null,
+	  DateofBirth datetime not null,
+	  Email nvarchar(40),
+	  Phone nvarchar(12),
+	  Class nvarchar(10),
+	  primary key (StudentID)
+)
+go
+create table Subjects (
+      SubjectID nvarchar(10),
+	  SubjectName nvarchar(25) not null,
+	  primary key(SubjectID)
+
+)
+go
+create table Mark (
+	  StudentID nvarchar(12),
+	  SubjectID nvarchar(10),
+	  Theory tinyint,
+	  Practical tinyint,
+	  "Date" datetime,
+	  constraint PK primary key (StudentID, SubjectID)
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807005',
+N'Mail Trung Hiếu',
+'19891011',
+'trunghieu@yahoo.com',
+'0904115116',
+'AV1'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807006',
+N'Nguyễn Quý Hùng',
+'19881202',
+'quyhung@yahoo.com',
+'0955776687',
+'AV2'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807007',
+N'Đỗ Đắc Huỳnh',
+'19900102',
+'dachuynh@yahoo.com',
+'0988574747',
+'AV2'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807009',
+N'An Đăng Khuê',
+'19860306',
+'dangkhue@yahoo.com',
+'0986757463',
+'AV1'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807010',
+N'Nguyễn T. Tuyết Lan',
+'19890712',
+'tuyetlan@yahoo.com',
+'0983310342',
+'AV2'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807011',
+N'Đinh Phụng Long',
+'19901202',
+'phunglong@yahoo.com',
+'',
+'AV1'
+)
+go
+insert dbo.Students (StudentID, StudentName, DateofBirth, Email, Phone, Class)
+values (
+N'AV0807012',
+N'Nguyễn Tuấn Nam',
+'19900302',
+'tuannam@yahoo.com',
+'',
+'AV1'
+)
+go
+
+
+insert dbo.Subjects (SubjectID, SubjectName)
+values(
+'S001',
+N'SQL'
+)
+go
+insert dbo.Subjects (SubjectID, SubjectName)
+values(
+'S002',
+N'Java Simplefield'
+)
+go
+insert dbo.Subjects (SubjectID, SubjectName)
+values(
+'S003',
+N'Active Server Page'
+)
+go
+
+insert dbo.Mark 
+values (
+N'AV0807005',
+N'S001',
+'8',
+'25',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807006',
+N'S002',
+'16',
+'30',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807007',
+N'S001',
+'10',
+'25',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807009',
+N'S003',
+'7',
+'13',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807010',
+N'S003',
+'9',
+'16',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807011',
+N'S002',
+'8',
+'30',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807012',
+N'S001',
+'7',
+'31',
+'20080506'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807005',
+N'S002',
+'12',
+'11',
+'20080606'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807009',
+N'S003',
+'11',
+'20',
+'20080606'
+)
+go
+insert dbo.Mark 
+values (
+N'AV0807010',
+N'S001',
+'7',
+'6',
+'20080606'
+)
+go
